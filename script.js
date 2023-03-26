@@ -1,5 +1,7 @@
 const container = document.querySelector('#container');
 const sizeButton = document.querySelector('#sizeButton');
+const startButton = document.querySelector('#start');
+const eraserButton = document.querySelector('#eraseButton');
 
 function getSize() {
     let userInput = prompt('Choose panel width between 2 and 99.');
@@ -72,10 +74,18 @@ function startDraw() {
         })
     }
 }
+
+function eraseDraw() {
+    let columns = document.getElementsByClassName ('column');
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].addEventListener('mouseover', () => {
+            columns[i].style.backgroundColor = ''
+        })
+    }
+}
   
-// user input and box generation - working
+// button interactions
 sizeButton.addEventListener('click', changeSize);
 resetButton.addEventListener('click', resetGrid);
-
-// set up grid box and start drawing
-startDraw
+startButton.addEventListener('click', startDraw);
+eraserButton.addEventListener('click', eraseDraw);

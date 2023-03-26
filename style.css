@@ -20,8 +20,9 @@ body {
     border: 8px solid black;
 }
 #startDraw button:hover {
-    background-color: green;
-    color: white;
+    background-color: yellow;
+    color: blue;
+    border-color: blue;
 }
 
 button:hover {
