@@ -2,7 +2,6 @@ const container = document.querySelector('#container');
 const sizeButton = document.querySelector('#sizeButton');
 
 function getSize() {
-    // let userChoice = 0;
     let userInput = prompt('Choose panel width between 2 and 99.');
     if (userInput == null || userInput <= 1 || userInput > 99) {
         userInput = prompt('Make sure the number is between 2 and 99!');
@@ -18,25 +17,23 @@ function getSize() {
     }   else {
         defaultSetting();
     }
-   
 }
-// user input and box generation - working
-sizeButton.addEventListener('click', changeSize);
-resetButton.addEventListener('click', resetGrid);
 
+// remove all divs and ask for user input to create new grid
 function changeSize() {
     container.replaceChildren();
     startDraw();
-    
 }
 
+// change background color to white and keep the grid size
 function resetGrid() {
     let columns = document.getElementsByClassName ('column');
     for (let i = 0; i < columns.length; i++) {
         columns[i].style.backgroundColor = 'white';
-}
+    }
 }
 
+// create grid based on the user input
 function makeGrid(number) {
     number = getSize();
     for(let i = 0; i < number; i++) {
@@ -47,11 +44,11 @@ function makeGrid(number) {
             let column = document.createElement('div');
             column.classList.add('column')
             row.appendChild(column);
-    }
-} 
+        }
+    } 
 }
 
-
+// set default grid if the user continuously fails to enter valid number
 function defaultSetting() {
     let number = 16;
     for (let i = 0; i < number; i++) {
@@ -62,10 +59,10 @@ function defaultSetting() {
             let column = document.createElement('div');
             column.classList.add('column')
             row.appendChild(column);
+        }   
     }
 }
-}
-
+// add event listener to all grid divs to change their color when hover
 function startDraw() {
     makeGrid();
     let columns = document.getElementsByClassName ('column');
@@ -76,4 +73,9 @@ function startDraw() {
     }
 }
   
-startDraw()
+// user input and box generation - working
+sizeButton.addEventListener('click', changeSize);
+resetButton.addEventListener('click', resetGrid);
+
+// set up grid box and start drawing
+startDraw

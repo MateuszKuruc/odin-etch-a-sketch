@@ -1,9 +1,69 @@
+body {
+    background-color: rgb(123, 3, 134)
+}
+
+#header {
+    text-align: center;
+    color:rgb(214, 150, 12);
+    margin-top: 50px;
+}
+#startDraw {
+    text-align: center;
+}
+
+#startDraw button {
+    width: 300px;
+    height: 100px;
+    font-size: 25px;
+    border-radius: 15px;
+    background-color: coral;
+    border: 8px solid black;
+}
+#startDraw button:hover {
+    background-color: green;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.2);
+    background-color: green;
+    border-color: black;
+    color: white;
+}
+
+
+#board {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+#buttonSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 25px;
+}
+
+.buttons {
+    width: 150px;
+    height: 75px;
+    color:rgb(31, 7, 146);
+    background-color:rgb(9, 187, 181);
+    border-radius: 15px;
+    font-weight: 900;
+    border: 5px solid pink;
+}
+
 #container {
-display: flex;
-flex-direction: column;
-width: 600px;
-height: 600px;
-border: 1px solid black;
+/* margin-top: 100px; */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    border: 5px solid pink;
+    border-radius: 15px;
 }
 
 .row {
