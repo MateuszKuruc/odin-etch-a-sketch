@@ -4,7 +4,7 @@ const startButton = document.querySelector('#start');
 const eraserButton = document.querySelector('#eraseButton');
 
 function getSize() {
-    let userInput = prompt('Choose panel width between 2 and 99.');
+    let userInput = prompt('Adjust grid by choosing number between 2 and 99.');
     if (userInput == null || userInput <= 1 || userInput > 99) {
         userInput = prompt('Make sure the number is between 2 and 99!');
         if (userInput == null || userInput <= 1 || userInput > 99) {
@@ -75,6 +75,7 @@ function startDraw() {
     }
 }
 
+// add event listener to erase the color with the mouse hover
 function eraseDraw() {
     let columns = document.getElementsByClassName ('column');
     for (let i = 0; i < columns.length; i++) {
