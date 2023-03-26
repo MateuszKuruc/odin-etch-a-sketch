@@ -3,6 +3,7 @@ const sizeButton = document.querySelector('#sizeButton');
 const startButton = document.querySelector('#start');
 const eraserButton = document.querySelector('#eraseButton');
 const gridButton = document.querySelector('#gridButton');
+const penButton = document.querySelector('#penButton');
 
 function getSize() {
     let userInput = prompt('Adjust grid by choosing number between 2 and 99.');
@@ -86,6 +87,16 @@ function eraseDraw() {
     }
 }
 
+// add event listener to choose black pen
+function choosePen() {
+    let columns = document.getElementsByClassName ('column');
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].addEventListener('mouseover', () => {
+            columns[i].style.backgroundColor = 'black'
+        })
+    }
+}
+
 // remove grid 
 function removeGrid() {
     let columns = document.getElementsByClassName ('column');
@@ -99,3 +110,4 @@ resetButton.addEventListener('click', resetGrid);
 startButton.addEventListener('click', startDraw);
 eraserButton.addEventListener('click', eraseDraw);
 gridButton.addEventListener('click', removeGrid);
+penButton.addEventListener('click', choosePen);
