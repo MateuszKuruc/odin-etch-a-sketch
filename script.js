@@ -3,7 +3,7 @@ const sizeButton = document.querySelector('#sizeButton');
 
 function getSize() {
     // let userChoice = 0;
-    let userInput = prompt('Choose between 2 and 99 for the panel width.');
+    let userInput = prompt('Choose panel width between 2 and 99.');
     if (userInput == null || userInput <= 1 || userInput > 99) {
         userInput = prompt('Make sure the number is between 2 and 99!');
         if (userInput == null || userInput <= 1 || userInput > 99) {
@@ -25,12 +25,16 @@ sizeButton.addEventListener('click', changeSize);
 resetButton.addEventListener('click', resetGrid);
 
 function changeSize() {
-    resetGrid();
-    makeGrid();
+    container.replaceChildren();
+    startDraw();
+    
 }
 
 function resetGrid() {
-    container.replaceChildren();
+    let columns = document.getElementsByClassName ('column');
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].style.backgroundColor = 'white';
+}
 }
 
 function makeGrid(number) {
@@ -62,3 +66,14 @@ function defaultSetting() {
 }
 }
 
+function startDraw() {
+    makeGrid();
+    let columns = document.getElementsByClassName ('column');
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].addEventListener('mouseover', () => {
+            columns[i].style.backgroundColor = 'black'
+        })
+    }
+}
+  
+startDraw()
