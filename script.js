@@ -2,6 +2,7 @@ const container = document.querySelector('#container');
 const sizeButton = document.querySelector('#sizeButton');
 const startButton = document.querySelector('#start');
 const eraserButton = document.querySelector('#eraseButton');
+const gridButton = document.querySelector('#gridButton');
 
 function getSize() {
     let userInput = prompt('Adjust grid by choosing number between 2 and 99.');
@@ -84,9 +85,17 @@ function eraseDraw() {
         })
     }
 }
-  
+
+// remove grid 
+function removeGrid() {
+    let columns = document.getElementsByClassName ('column');
+    for (let i = 0; i < columns.length; i++) {
+        columns[i].style.border = '0px';
+        }
+}
 // button interactions
 sizeButton.addEventListener('click', changeSize);
 resetButton.addEventListener('click', resetGrid);
 startButton.addEventListener('click', startDraw);
 eraserButton.addEventListener('click', eraseDraw);
+gridButton.addEventListener('click', removeGrid);
